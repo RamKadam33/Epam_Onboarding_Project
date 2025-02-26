@@ -11,11 +11,7 @@ namespace TestProject1
 {
     public abstract class LoginBase:ILoginCre
     {
-
-
-        //private string PrivateAccessSpecifier= "PrivateAccessSpecifier";
-        //protected string ProtectedAccessSpecifier= "ProtectedAccessSpecifier";
-        //internal string InternalAccessSpecifier= "InternalAccessSpecifier";
+                
         public abstract void EnterUsername(IWebDriver driver,string username);
         public abstract void EnterPassword(IWebDriver driver,string password);
         public abstract void ClickLogin(IWebDriver driver);

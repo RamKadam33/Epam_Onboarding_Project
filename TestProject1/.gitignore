@@ -1,0 +1,53 @@
+# Ignore .NET build and binary files
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.log
+*.cache
+
+# Ignore user-specific files
+*.user
+*.suo
+*.vs/
+*.vscode/
+
+# Ignore test results and coverage reports
+TestResults/
+coverage/
+*.trx
+*.coverage
+*.coverlet/
+
+# Ignore package dependencies
+packages/
+node_modules/
+*.nupkg
+project.lock.json
+
+# Ignore SpecFlow-generated files
+*.feature.cs
+
+# Ignore Selenium WebDriver files
+chromedriver.log
+chromedriver.exe
+geckodriver.exe
+
+# Ignore environment and configuration files
+appsettings.json
+appconfig.json
+secrets.json
+
+# Ignore OS and editor files
+.DS_Store
+Thumbs.db
+
+# Ignore Azure DevOps and GitHub Actions workflows (if any)
+*.yml
+pipelines/
+.github/
+
+# Ignore Python and Jupyter Notebook files (if used)
+__pycache__/
+*.ipynb_checkpoints

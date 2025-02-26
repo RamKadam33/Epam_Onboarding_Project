@@ -89,7 +89,7 @@ namespace TestProject1
             Console.WriteLine("Capacity: " + sb.Capacity);
         }
         [Test]
-        public void Test1()
+        public void EqualsAndReferenceTest()
         {
             Person person1 = new Person("Ram", 30);
             Person person2 = new Person("Ram", 30);

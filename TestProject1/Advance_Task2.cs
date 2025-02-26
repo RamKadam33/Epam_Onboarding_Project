@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace TestProject1
 {
-    internal class Task2
+    internal class Advance_Task2
     {
             private static IWebDriver driver;  // static
             private WebDriverWait wait;
@@ -90,7 +90,69 @@ namespace TestProject1
                     driver.Quit(); 
                 }
             }
+        [Test]
+        public void ExeptionHandlingTest_AdvanceDotnet_Task3()
+        {
+            try
+            {
+
+                IWebElement usernameField = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//input[@name='username']")));
+                usernameField.SendKeys(USERNAME);
+
+                IWebElement passwordField = driver.FindElement(By.XPath("//input[@name='password']"));
+                passwordField.SendKeys(PASSWORD);
+
+                IWebElement loginButton = driver.FindElement(By.XPath("//button[@type='submit']"));
+                loginButton.Click();
+
+
+                IWebElement profilePicture = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//li/descendant::img[@alt='profile picture']")));
+                Assert.IsTrue(profilePicture.Displayed, "Profile picture not displayed, login failed.");
+
+                Console.WriteLine("Login successful!");
+
+
+                IList<IWebElement> menuItems = driver.FindElements(By.XPath("//ul[@class='oxd-main-menu']//li"));
+
+                foreach (IWebElement item in menuItems)
+                {
+                    string itemName = item.Text;
+                    Console.WriteLine("Navigating: " + itemName);
+
+                    if (!itemName.Equals("My Info"))
+                    {
+                        continue;  // Skip 
+                    }
+
+                    if (itemName.Equals("My Info"))
+                    {
+                        item.Click();
+                        Console.WriteLine("Opened My Info page.");
+                        break;
+                    }
+                }
+
+                if (profilePicture is IWebElement)
+                {
+
+                    Console.WriteLine("Profile picture is a valid web element.");
+                }
+                else
+                {
+                    throw new Exception("Profile picture is not a valid web element.");
+                }
+            }
+            catch (Exception e)
+
+            {
+                Console.WriteLine($"Failed: Error: {e}");
+            }
+            finally
+            {
+                driver.Quit();
+            }
         }
+    }
     }
 
 

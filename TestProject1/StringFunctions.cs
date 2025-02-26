@@ -10,7 +10,7 @@ namespace TestProject1
     {
 
         [Test]
-        public void stringMethods()
+        public void stringMethods_advance_task1()
         {
             //String Concatenation
             string str1 ="Ram";

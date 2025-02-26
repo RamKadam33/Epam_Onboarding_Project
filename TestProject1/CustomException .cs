@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace TestProject1
 {
-    internal class CustomException : Exception{
+    internal class CustomException : Exception
+    {
     public int ErrorCode { get; }
 
     public CustomException(string message, int errorCode) : base(message)
@@ -20,7 +21,7 @@ namespace TestProject1
     }
 
     
-        internal class custom
+        internal class Custom
         {
             private static IWebDriver driver;  // static
             private WebDriverWait wait;
