@@ -15,7 +15,7 @@ namespace TestProject1
         InternalError = 500
     }
 
-    internal class EnumExamples
+    internal class EnumExamples_AdvanceDotnet_Task5
     {
         [Test]
         public void epamEnum()
@@ -46,7 +46,7 @@ namespace TestProject1
         }
     }
 
-    public class SpecifierTest
+    public class SpecifierTest_AdvanceDotnet_Task5
     {
         //public SpecifierTest(string reqId, StatusCode code, string message)
         //: base(reqId, code, message)

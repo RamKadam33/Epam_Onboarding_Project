@@ -21,7 +21,7 @@ namespace TestProject1
     }
 
     
-        internal class Custom
+        internal class CustomException_AdvanceDotnet_Task4
         {
             private static IWebDriver driver;  // static
             private WebDriverWait wait;

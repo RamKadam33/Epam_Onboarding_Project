@@ -22,7 +22,7 @@ namespace TestProject1
         }
 
         [Test]
-        public void TestSuccessfulLogin()
+        public void AccessSpecifier_Inheritance_AdvanceDotnet_Task9()
         {
             PerformLogin(driver, "Admin", "admin123");
             Assert.IsTrue(IsHomePageDisplayed(driver), "Home page should be displayed after login");

@@ -10,7 +10,7 @@ namespace TestProject1
         {
         }
         [Test]
-        public void TestArray()
+        public void TestArray_AdvanceDotnet_Task12_13()
         {
 
             string[] addressParts = { "Ram", "Kadam", "At", "Kotharul", "Tq", "Majalgaon", "Dist", "Beed", "Kadam" };
@@ -63,7 +63,7 @@ namespace TestProject1
 
         }
         [Test]
-        public void TestStringBulder()
+        public void TestStringBulder_AdvanceDotnet_Task11()
         {
            
             StringBuilder sb = new StringBuilder("Ram Kadam");
@@ -89,7 +89,7 @@ namespace TestProject1
             Console.WriteLine("Capacity: " + sb.Capacity);
         }
         [Test]
-        public void EqualsAndReferenceTest()
+        public void EqualsAndReferenceTest_AdvanceDotnet_Task10()
         {
             Person person1 = new Person("Ram", 30);
             Person person2 = new Person("Ram", 30);

@@ -10,8 +10,8 @@ namespace TestProject1
 {
     [TestFixture]  
 
-    public class LoginTest
-        {
+    public class Polymarphism_Inheritance_abstraction_interface__AdvanceDotnet_Task6_8
+    {
         private IWebDriver driver;
         private OrangeHRMLoginPage loginPage;
 

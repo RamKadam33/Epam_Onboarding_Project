@@ -14,7 +14,7 @@ using System.Reflection;
 
 namespace TestProject1
 {
-    public class MethodOverloading
+    public class MethodOverloading_AdvanceDotnet_Task7
     {
         private static IWebDriver driver;
         private WebDriverWait wait;

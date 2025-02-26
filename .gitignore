@@ -10,8 +10,9 @@ obj/
 # Ignore user-specific files
 *.user
 *.suo
-*.vs/
-*.vscode/
+.vs/
+.vs/TestProject1/*  # Ensures all files inside are ignored
+.vscode/
 
 # Ignore test results and coverage reports
 TestResults/
@@ -51,3 +52,6 @@ pipelines/
 # Ignore Python and Jupyter Notebook files (if used)
 __pycache__/
 *.ipynb_checkpoints
+# Ignore Visual Studio solution user options and other generated files
+*.suo
+*.v2

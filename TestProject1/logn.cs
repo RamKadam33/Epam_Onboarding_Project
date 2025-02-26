@@ -31,7 +31,7 @@ public class LoggingTest
     }
 
     [Test]
-    public void TestLogging()
+    public void TestLogging_AdvanceDotnet_Task14()
     {
         Logger.Debug("Debug message.");
         Logger.Info("Info message.");
