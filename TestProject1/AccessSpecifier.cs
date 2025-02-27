@@ -29,6 +29,11 @@ namespace TestProject1
             Console.WriteLine(protectedMessage);
                 Console.WriteLine(internalMessage);
         }
+        [TearDown]
+        public void Teardown()
+        {
+            driver.Quit();
+        }
 
-    }
+        }
 }

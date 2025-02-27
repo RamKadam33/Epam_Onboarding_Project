@@ -10,7 +10,7 @@ namespace TestProject1
     public class LoggingTest
     {
         private static readonly ILog Logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
+        
         [OneTimeSetUp]
         public void Setup()
         {
