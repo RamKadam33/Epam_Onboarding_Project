@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestProject1.Practice
+namespace TestProject1.Practice.Generics
 {
  delegate T NumberChanger<T>(T n);
     [TestFixture]

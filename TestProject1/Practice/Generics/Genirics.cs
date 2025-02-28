@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestProject1.Practice
+namespace TestProject1.Practice.Generics
 {
     public class MyGenericArray<T>
     {
@@ -90,8 +90,8 @@ namespace TestProject1.Practice
             Console.WriteLine("c = {0}, d = {1}", c, d);
 
             //call swap
-            swapping.Swap<int>(ref a, ref b);
-            swapping.Swap<char>(ref c, ref d);
+            swapping.Swap(ref a, ref b);
+            swapping.Swap(ref c, ref d);
 
             //display values after swap:
             Console.WriteLine("Int values after calling swap:");
