@@ -3,15 +3,18 @@ using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace RestCharp.GetRequestPrac
 {
     [TestFixture]
     internal class GetRequestTest
-    {//private string Url = "https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/core/about";
+    {    //private string Url = "https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/core/about";
         private string Url = "https://jsonplaceholder.typicode.com/users";
+        private string XmlUrl= "https://mocktarget.apigee.net/xml";
         private byte[] credentials = System.Text.Encoding.ASCII.GetBytes("Admin:admin123");
 
         [Test]
@@ -57,7 +60,7 @@ namespace RestCharp.GetRequestPrac
             }
         }
         [Test]
-        public void Test3()
+        public void TestDeserializationJsonData()
         {
             RestClient restClient = new RestClient();
             RestRequest restRequest = new RestRequest(Url);
@@ -88,7 +91,49 @@ namespace RestCharp.GetRequestPrac
                 Console.WriteLine($"Request failed! Status Code: {restResponse.StatusCode}, Error: {restResponse.ErrorMessage}");
             }
         }
+        [Test]
+        public void DeserializationXMLData()
+        {
+            RestClient restClient = new RestClient();
+            RestRequest restRequest = new RestRequest(XmlUrl, Method.Get);
 
-    
-}
+            restRequest.AddHeader("Accept", "application/xml");
+
+            RestResponse restResponse = restClient.Execute(restRequest);
+            Console.WriteLine($"Response Content: \n{restResponse.Content}");
+            // Check response status
+            if (restResponse.StatusCode == HttpStatusCode.OK && restResponse.IsSuccessful)
+            {
+                // Deserialize XML response
+                XmlRootObject data = DeserializeXmlResponse<XmlRootObject>(restResponse.Content);
+                Console.WriteLine("Status " + restResponse.StatusCode);
+                Console.WriteLine("Successful? " + restResponse.IsSuccessful);
+                if (data != null)
+                {
+                    Console.WriteLine("Deserialization Successful!");
+                    Console.WriteLine($"Id: {data.FirstName}, Address: {data.LastName}");
+                }
+                else
+                {
+                    Console.WriteLine("Deserialization returned null.");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Request failed with status code: {restResponse.StatusCode}");
+            }
+        }
+        public static T DeserializeXmlResponse<T>(string xmlContent)
+        {
+            if (string.IsNullOrEmpty(xmlContent))
+                return default;
+
+            XmlSerializer serializer = new XmlSerializer(typeof(T));
+            using (StringReader reader = new StringReader(xmlContent))
+            {
+                return (T)serializer.Deserialize(reader);
+            }
+        }
+
+    }
 }
