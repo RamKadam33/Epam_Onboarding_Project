@@ -31,6 +31,8 @@ namespace RestCharp.GetRequestPrac
                 Console.WriteLine(res.Content);
             }
             Console.WriteLine(res.StatusCode);
+            Assert.AreEqual(HttpStatusCode.OK, res.StatusCode,"Status code is not working properly");
+            Assert.AreEqual(200, (int)res.StatusCode, "Status code is not working properly");
             Console.WriteLine(res.ErrorMessage);
             Console.WriteLine(res.ErrorException);
         }
