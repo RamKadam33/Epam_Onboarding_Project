@@ -46,7 +46,7 @@ namespace RestSharp
             Console.WriteLine($"✅ Bearer Token: {token}");
 
             // Step 2: Use Bearer Token for an authenticated API request
-            await GetEmployeeList(token);
+            // await GetEmployeeList(token);
         }
 
         // Method to authenticate and get Bearer Token
@@ -60,7 +60,7 @@ namespace RestSharp
 
             if (response.IsSuccessful && response.Data != null && !string.IsNullOrEmpty(response.Data.Token))
             {
-                return $"Bearer {response.Data.Token}";  // Return token in Bearer format
+                return $"Bearer {response.Data.Token}"; 
             }
 
             Console.WriteLine($"❌ Authentication Failed: {response.Content}");
